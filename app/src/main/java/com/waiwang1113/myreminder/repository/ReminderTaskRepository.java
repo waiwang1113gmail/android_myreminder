@@ -1,7 +1,10 @@
 package com.waiwang1113.myreminder.repository;
 
+import android.util.Log;
+
 import com.waiwang1113.myreminder.entity.ReminderTask;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,13 +13,24 @@ import java.util.List;
  */
 
 public class ReminderTaskRepository {
-    public void addTask(ReminderTask task){
 
+    private static String TAG = ReminderTaskRepository.class.getCanonicalName();
+    private List<ReminderTask> list;
+    public ReminderTaskRepository(){
+        Log.d(TAG,"Constructing new ReminderTaskRepository");
+        list=new ArrayList<>();
+        list.add(new ReminderTask("sdad"));
+        list.add(new ReminderTask("sdad"));
+    }
+    public void addTask(ReminderTask task){
+        Log.d(TAG,"Adding new task: " + task);
+        list.add(task);
     }
     public List<ReminderTask> getAllTasks(){
-        return null;
+        Log.d(TAG,"returning " + this.list.toString());
+        return this.list;
     }
     public void removeTask(ReminderTask task){
-
+        list.remove(task);
     }
 }

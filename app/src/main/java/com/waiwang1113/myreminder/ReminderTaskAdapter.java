@@ -1,8 +1,7 @@
 package com.waiwang1113.myreminder;
 
-import java.util.ArrayList;
-
 import com.waiwang1113.myreminder.entity.ReminderTask;
+import com.waiwang1113.myreminder.repository.ReminderTaskRepository;
 
 import android.content.Context;
 import android.util.Log;
@@ -11,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
-import android.widget.RadioButton;
+import android.widget.TextView;
 
 /**
  * Custom Adapter for handling reminder task items management
@@ -19,19 +18,16 @@ import android.widget.RadioButton;
  *
  */
 
-public class ReminderTaskAdapter extends BaseAdapter{
+class ReminderTaskAdapter extends BaseAdapter{
 	private static String TAG = ReminderTaskAdapter.class.getCanonicalName();
-	private ArrayList<ReminderTask> items;
 	
 	private Context context;
-	 
-	public ReminderTaskAdapter(Context context) {
+
+	private ReminderTaskRepository repository;
+
+	ReminderTaskAdapter(Context context, ReminderTaskRepository repository) {
 		this.context =context;
-		this.items=new ArrayList<ReminderTask>();
-		this.items.add(new ReminderTask("remove the gabage."));
-		this.items.add(new ReminderTask("clean oven"));
- 
-		
+		this.repository=repository;
 	}
 	
 	@Override
@@ -41,28 +37,29 @@ public class ReminderTaskAdapter extends BaseAdapter{
         if (v == null) {
             LayoutInflater vi;
             vi = LayoutInflater.from(context);
-            v = vi.inflate(R.layout.tmpl_main_list_item, null);
+            v = vi.inflate(R.layout.tmpl_main_list_item,null);
         }
-        ReminderTask item= items.get(position);
+        ReminderTask item= repository.getAllTasks().get(position);
         if(item!=null){
-			CheckBox mRadioButton = (CheckBox) v.findViewById(R.id.listItemText);
-        	mRadioButton.setText(item.getName());
+			CheckBox mRadioButton = (CheckBox) v.findViewById(R.id.checkBox);
+			TextView content = (TextView) v.findViewById(R.id.task_name);
+			content.setText(item.getName());
         }
         return v;
 	}
 
 	@Override
 	public int getCount() {
-		return this.items.size();
+		return repository.getAllTasks().size();
 	}
 
 	@Override
 	public Object getItem(int position) { 
-		return items.get(position);
+		return repository.getAllTasks().get(position);
 	}
 
 	@Override
 	public long getItemId(int position) { 
-		return items.get(position).hashCode();
+		return repository.getAllTasks().get(position).hashCode();
 	}
 }
