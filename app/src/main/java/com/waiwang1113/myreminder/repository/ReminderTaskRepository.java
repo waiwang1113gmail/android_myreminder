@@ -19,8 +19,8 @@ public class ReminderTaskRepository {
     public ReminderTaskRepository(){
         Log.d(TAG,"Constructing new ReminderTaskRepository");
         list=new ArrayList<>();
-        list.add(new ReminderTask("sdad"));
-        list.add(new ReminderTask("sdad"));
+        list.add(new ReminderTask("Pay parking tickets"));
+        list.add(new ReminderTask("buy oranges and card boards"));
     }
     public void addTask(ReminderTask task){
         Log.d(TAG,"Adding new task: " + task);
