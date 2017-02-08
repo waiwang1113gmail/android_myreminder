@@ -9,4 +9,6 @@
     <string name="title_activity_add_task">Add new task</string>
 
     <string name="hint_task_name">Title</string>
+    <string name="hint_date">MM/DD/YYYY</string>
+    <string name="hint_time">HH:mm PM</string>
 </resources>

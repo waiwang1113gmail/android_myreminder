@@ -1,11 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.waiwang1113.myreminder.MainActivity" >
 
     <item
         android:id="@+id/action_add"
         android:orderInCategory="100"
-        android:showAsAction="always"
+        app:showAsAction="always"
         android:title="@string/action_add"
         android:icon="@drawable/ic_action_add"/>
 

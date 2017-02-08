@@ -6,9 +6,7 @@
     android:layout_height="match_parent"
     android:label="@string/title_activity_add_task"
     tools:context="com.waiwang1113.myreminder.AddTaskActivity">
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +14,9 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:layout_below="@+id/toolbar">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,20 +28,86 @@
                 android:id="@+id/wTextName"
                 android:hint="@string/hint_task_name"
                 android:layout_below="@+id/toolbar"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"/>
         </android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="From"
+            android:ems="10"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true">
+
+
             <EditText
-                android:layout_width="match_parent"
+                android:drawableLeft="@drawable/ic_field_calendar"
+                android:id="@+id/wTextDate"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="6"
                 android:ems="10"
-                android:id="@+id/wTextLocation"
-                android:hint="@string/hint_task_name"
-                android:layout_below="@+id/toolbar"
-                android:layout_alignParentStart="true" />
-        </android.support.design.widget.TextInputLayout>
+                android:inputType="date"
+                android:focusable="false"
+                android:hint="@string/hint_date"/>
+            <EditText
+                android:id="@+id/wTextTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ems="10"
+                android:inputType="date"
+                android:focusable="false"
+                android:drawableLeft="@drawable/ic_field_clock"
+                android:hint="@string/hint_time"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="To"
+            android:ems="10"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true">
+
+
+            <EditText
+                android:drawableLeft="@drawable/ic_field_calendar"
+                android:id="@+id/wTextDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:ems="10"
+                android:inputType="date"
+                android:focusable="false"
+                android:hint="@string/hint_date"/>
+            <EditText
+                android:id="@+id/wTextTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:ems="10"
+                android:inputType="date"
+                android:focusable="false"
+                android:drawableLeft="@drawable/ic_field_clock"
+                android:hint="@string/hint_time"/>
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

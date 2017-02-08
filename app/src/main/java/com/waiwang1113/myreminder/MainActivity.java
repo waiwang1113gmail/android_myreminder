@@ -40,7 +40,7 @@ public class MainActivity extends BaseActivity {
 		super.onCreate(savedInstanceState);
         Log.d(TAG,"onCreate method");
 		setContentView(R.layout.activity_main);
-        setupToolbar();
+
         ListView reminderList = (ListView) this.findViewById(R.id.taskList);
         mAdapter =new ReminderTaskAdapter(this,this.getAppComponent().provideReminderTaskRepository());
 		reminderList.setAdapter(mAdapter);
