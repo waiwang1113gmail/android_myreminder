@@ -31,22 +31,24 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"/>
         </android.support.design.widget.TextInputLayout>
-        <TextView
+
+        <CheckBox
+            android:text="@string/text_remind_me"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="From"
-            android:ems="10"
-            android:textSize="14sp"
-            android:textColor="@android:color/darker_gray"/>
+            android:textColor="@android:color/darker_gray"
+            android:id="@+id/wNeedNotification"/>
+
 
         <LinearLayout
+            android:id="@+id/wDateTimePanel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
             android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true">
+            android:layout_alignParentLeft="true"
+            android:visibility="gone">
 
 
             <EditText
@@ -70,44 +72,7 @@
                 android:drawableLeft="@drawable/ic_field_clock"
                 android:hint="@string/hint_time"/>
         </LinearLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="To"
-            android:ems="10"
-            android:textSize="14sp"
-            android:textColor="@android:color/darker_gray"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true">
 
-
-            <EditText
-                android:drawableLeft="@drawable/ic_field_calendar"
-                android:id="@+id/wTextDate"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:ems="10"
-                android:inputType="date"
-                android:focusable="false"
-                android:hint="@string/hint_date"/>
-            <EditText
-                android:id="@+id/wTextTime"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="4"
-                android:ems="10"
-                android:inputType="date"
-                android:focusable="false"
-                android:drawableLeft="@drawable/ic_field_clock"
-                android:hint="@string/hint_time"/>
-        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

@@ -11,4 +11,7 @@
     <string name="hint_task_name">Title</string>
     <string name="hint_date">MM/DD/YYYY</string>
     <string name="hint_time">HH:mm PM</string>
+
+    <string name="text_remind_me">Remind me</string>
+
 </resources>
